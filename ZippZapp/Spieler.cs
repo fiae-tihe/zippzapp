@@ -10,7 +10,7 @@ using System.Threading;
 namespace ZippZapp
 {
 	
-	// TODO: NEW
+	// TODO[1]: NEW
 	public interface KenntSpiel{
 		void zipp();
 		void zapp();
@@ -24,7 +24,7 @@ namespace ZippZapp
 		void tueEtwas();
 	}
 	
-	// TODO: NEW
+	// TODO[1]: NEW
 	public class BallAblehnenException : Exception{
 		
 	}
@@ -43,7 +43,7 @@ namespace ZippZapp
 		public Spieler spieler_links;
 		
 		// Spieler nutzen immer ihre rechte Hand, um den Ball zu halten
-		//TODO: So kann jeder dem Spieler etwas in die Hand drücken, ohne das er*sie es will. Methode zum Ball geben stattdessen.
+		//TODO[3]: So kann jeder dem Spieler etwas in die Hand drücken, ohne das er*sie es will. Methode zum Ball geben stattdessen.
 		public Ball hand_rechts;
 		
 		public Spieler()
@@ -85,9 +85,9 @@ namespace ZippZapp
 		
 		// Ist boing eine Aktion oder eine Reaktion?
 		public void boing(){
-			//TODO Machen wir die vorherige Aktion einfach rückgängig, 
-			// geben wir den Ball weiter oder 
-			// lassen wir erst gar nicht zu, dass einem der Ball in die Hand gedrückt wird?
+			//TODO[3]: Machen wir die vorherige Aktion einfach rückgängig?
+			// Geben wir den Ball weiter?
+			// Lassen wir erst gar nicht zu, dass einem der Ball in die Hand gedrückt wird?
 		}	
 				
 		public void pong(){
@@ -129,6 +129,7 @@ namespace ZippZapp
 	
 	public class SpielerMensch: Spieler {
 		
+		//TODO[4]: NEW
 		Dictionary<char, string> actions_list = new Dictionary<char, string>(){
 			{'1', "zipp"},
 			{'2', "zapp"},
@@ -147,7 +148,8 @@ namespace ZippZapp
 			
 			Console.WriteLine(actions_list[key_pressed.KeyChar]);
 			Thread.Sleep(2000);
-			//TODO Aktion ausführen
+			//TODO[5]: Der menschliche Spieler drückt zwar eine Taste, aber es wird hier noch keine Aktion ausgeführt.
+			// Ergänzen sie das
 			
 		}
 	}

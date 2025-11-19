@@ -32,7 +32,7 @@ namespace ZippZapp
 			testKreis.printKreis();
 			waitForKeypress();
 			
-			//TODO Wie lösen wir die nächste Aktion aus?
+			//TODO[2]: Wie lösen wir die nächste Aktion aus?
 			// Wer macht etwas? -> Auf welchem Objekt rufe ich eine Methode auf?
 			// Was wird gemacht? -> Welche Methode wird aufgerufen bzw. was tut diese Methode?
 			Spieler spielerMitBall = null;
