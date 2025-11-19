@@ -24,11 +24,21 @@ namespace ZippZapp
 				start_spieler.spieler_links = start_spieler;
 				start_spieler.spieler_rechts = start_spieler;
 			} else {
-				// TODO[2]: Zeichnen für den Zustand vor der Ausführung der folgenden drei Codezeilen jeweils ein Objektdiagramm.
+				// Zeichnen für den Zustand vor der Ausführung der folgenden drei Codezeilen jeweils ein Objektdiagramm.
 				// Beschreiben sie mit dem Diagramm einen Zustand, der während der Ausführung der Methode erzeugeTestKreis() auftreten kann.
+				
+				//Aufgezeichnet für den Fall: Ein Spieler im Kreis, einer neu dazu -> Fehler korrigiert unter 4
+				//TODO[2]: Funktioniert das auch für 2+1?
+				
+				
+				//1
 				neuerSpieler.spieler_links = start_spieler.spieler_links;
+				//2
 				start_spieler.spieler_links = neuerSpieler;
-				neuerSpieler.spieler_rechts = start_spieler;			
+				//3
+				neuerSpieler.spieler_rechts = start_spieler;
+				//4
+				start_spieler.spieler_rechts = neuerSpieler;
 			}
 		}
 		
