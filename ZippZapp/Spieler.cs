@@ -25,6 +25,8 @@ namespace ZippZapp
 	}
 	
 	// TODO[1]: NEW
+	// Fehler ist entstanden -> Zettel wird erstellt und geworfen (eventuell Rückmeldung an User). Ohne werfen (throw) passiert nichts.
+	// Exception stellt Fehler dar, die beim Ausführen einer Anwendung auftreten
 	public class BallAblehnenException : Exception{
 		
 	}
