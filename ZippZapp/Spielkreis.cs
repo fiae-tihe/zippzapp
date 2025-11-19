@@ -32,7 +32,7 @@ namespace ZippZapp
 		}
 		
 		public void spielerZumKreis(string name){
-			Spieler neuerSpielerMitName = new SpielerMensch();
+			Spieler neuerSpielerMitName = new SpielerNurZipp();
 			neuerSpielerMitName.name = name;
 			spielerZumKreis(neuerSpielerMitName);
 		}
