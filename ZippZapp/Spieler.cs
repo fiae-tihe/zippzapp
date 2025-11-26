@@ -10,7 +10,7 @@ using System.Threading;
 namespace ZippZapp
 {
 	
-	// TODO[1]: NEW
+	// TODO[1]: Interfaces sind neu -> Gemeinsame Besprechung
 	public interface KenntSpiel{
 		void zipp();
 		void zapp();
@@ -24,7 +24,7 @@ namespace ZippZapp
 		void tueEtwas();
 	}
 	
-	// TODO[1]: NEW
+	// TODO[1]: Exceptions sind neu -> Gemeinsame Besprechung
 	// Fehler ist entstanden -> Zettel wird erstellt und geworfen (eventuell Rückmeldung an User). Ohne werfen (throw) passiert nichts.
 	// Exception stellt Fehler dar, die beim Ausführen einer Anwendung auftreten
 	public class BallAblehnenException : Exception{
@@ -87,8 +87,9 @@ namespace ZippZapp
 		
 		// Ist boing eine Aktion oder eine Reaktion?
 		public void boing(){
-			//TODO[3]: Machen wir die vorherige Aktion einfach rückgängig?
-			// Geben wir den Ball weiter?
+			//TODO[3]: Wie setzen wir boing um?
+			// Machen wir die vorherige Aktion einfach rückgängig?
+			// Geben wir den Ball einfach weiter zum nächsten? (Eigentlich wäre das ja zipp, oder?
 			// Lassen wir erst gar nicht zu, dass einem der Ball in die Hand gedrückt wird?
 		}	
 				
@@ -131,7 +132,7 @@ namespace ZippZapp
 	
 	public class SpielerMensch: Spieler {
 		
-		//TODO[4]: NEW
+		//TODO[1]: Dictionaries sind neu -> Gemeinsame Besprechung
 		Dictionary<char, string> actions_list = new Dictionary<char, string>(){
 			{'1', "zipp"},
 			{'2', "zapp"},
@@ -151,7 +152,7 @@ namespace ZippZapp
 			Console.WriteLine(actions_list[key_pressed.KeyChar]);
 			Thread.Sleep(2000);
 			//TODO[5]: Der menschliche Spieler drückt zwar eine Taste, aber es wird hier noch keine Aktion ausgeführt.
-			// Ergänzen sie das
+			// Ergänzen sie das. Verwenden sie dazu eine switch-Anweisung.
 			
 		}
 	}

@@ -28,7 +28,9 @@ namespace ZippZapp
 				// Beschreiben sie mit dem Diagramm einen Zustand, der während der Ausführung der Methode erzeugeTestKreis() auftreten kann.
 				
 				//Aufgezeichnet für den Fall: Ein Spieler im Kreis, einer neu dazu -> Fehler korrigiert unter 4
-				//TODO[2]: Funktioniert das auch für 2+1?
+				//TODO[2]: Wir haben gemeinsam einen Fehler gefunden. Aber funktioniert die Methode jetzt wirklich?
+				// Funktioniert das auch für 2+1?
+				// Vielleicht sollten wir einen Test schreiben?
 				
 				
 				//1
