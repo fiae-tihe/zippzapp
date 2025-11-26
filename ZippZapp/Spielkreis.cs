@@ -52,7 +52,7 @@ namespace ZippZapp
 		
 		public void neuerBall(){
 			if(start_spieler!=null){
-				start_spieler.hand_rechts = new Ball();
+				start_spieler.setHandRechts(new Ball());
 			}
 		}
 		
