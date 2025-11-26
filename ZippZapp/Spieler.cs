@@ -10,23 +10,40 @@ using System.Threading;
 namespace ZippZapp
 {
 	
-	// TODO[1]: Interfaces sind neu -> Gemeinsame Besprechung
+	// KEIN gutes Beispiel hier!! Bisher wurde immer mit Vererbung gearbeitet.
+	// Es braucht ein größeres Beispiel, um zu verdeutlichen, warum Interfaces notwending sind!
+	
+	// Interfaces sind Verträge. Sie legen nur fest was ein Objekt können muss, nicht wie das gemacht wird.
 	public interface KenntSpiel{
+		
+		// Ball geht weiter in Ballrichtung
 		void zipp();
+		
+		// Ball wechselt die Richtung, geht also zum vorherigen Spieler
 		void zapp();
+		
+		// Spieler kann den Ball zu einem beliebigen Mitspieler schicken
 		void ping(Spieler ziel);
+		
+		// Spieler weicht aus, der Ball geht weiter.
 		void boing();
+		
+		// Ist man Ziel von ping, kann man mit pong ablehnen.
 		void pong();
+		
+		// Der Spieler soll seinen Zustand auf das Terminal schreiben.
 		void print();
 	}
+	
 	
 	public interface TutEtwas{
 		void tueEtwas();
 	}
 	
-	// TODO[1]: Exceptions sind neu -> Gemeinsame Besprechung
-	// Fehler ist entstanden -> Zettel wird erstellt und geworfen (eventuell Rückmeldung an User). Ohne werfen (throw) passiert nichts.
-	// Exception stellt Fehler dar, die beim Ausführen einer Anwendung auftreten
+	// Exception stellt Fehler dar, die beim Ausführen einer Anwendung auftreten.
+	// Sie können mit throw geworfen werden oder mit try/catch gefangen werden.
+	// Wenn ich eine neue Instanz von BallAblehnenException erstelle wird lediglich ein "Zettel mit Fehlerbeschreibung" erstellt.
+	// Dieser Zettel muss aber noch geworfen werden, um etwas auszulösen.
 	public class BallAblehnenException : Exception{
 		
 	}
@@ -45,11 +62,26 @@ namespace ZippZapp
 		public Spieler spieler_links;
 		
 		// Spieler nutzen immer ihre rechte Hand, um den Ball zu halten
-		//TODO[3]: So kann jeder dem Spieler etwas in die Hand drücken, ohne das er*sie es will. Methode zum Ball geben stattdessen.
-		public Ball hand_rechts;
+		// So könnt jeder dem Spieler etwas in die Hand drücken, ohne das er*sie es will.
+		// public Ball hand_rechts;
+		private Ball hand_rechts;	
 		
+		public Ball getHandRechts(){
+			return this.hand_rechts;
+		}
+		
+		public void setHandRechts(Ball ball){
+			if(nimmtBallNichtAn){
+				throw new BallAblehnenException();
+			}
+			this.hand_rechts = ball;
+		}
+		
+		// Der Spieler wird den Ball nicht nehmen
+		private bool nimmtBallNichtAn;
 		public Spieler()
 		{
+			nimmtBallNichtAn = false;
 		}
 		
 		private void ball_weiter_im_uhrzeigersinn(){
@@ -87,11 +119,11 @@ namespace ZippZapp
 		
 		// Ist boing eine Aktion oder eine Reaktion?
 		public void boing(){
-			//TODO[3]: Wie setzen wir boing um?
+			//TODO[4]: Wie setzen wir boing um?
 			// Machen wir die vorherige Aktion einfach rückgängig?
 			// Geben wir den Ball einfach weiter zum nächsten? (Eigentlich wäre das ja zipp, oder?
 			// Lassen wir erst gar nicht zu, dass einem der Ball in die Hand gedrückt wird?
-		}	
+		}
 				
 		public void pong(){
 			
@@ -132,7 +164,7 @@ namespace ZippZapp
 	
 	public class SpielerMensch: Spieler {
 		
-		//TODO[1]: Dictionaries sind neu -> Gemeinsame Besprechung
+		// Dictionaries sind wie Arrays, wir können aber beliebige Schlüssel verwenden (nicht nur Zahlen).
 		Dictionary<char, string> actions_list = new Dictionary<char, string>(){
 			{'1', "zipp"},
 			{'2', "zapp"},
@@ -153,7 +185,6 @@ namespace ZippZapp
 			Thread.Sleep(2000);
 			//TODO[5]: Der menschliche Spieler drückt zwar eine Taste, aber es wird hier noch keine Aktion ausgeführt.
 			// Ergänzen sie das. Verwenden sie dazu eine switch-Anweisung.
-			
 		}
 	}
 }

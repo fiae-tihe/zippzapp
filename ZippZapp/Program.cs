@@ -11,7 +11,8 @@ namespace ZippZapp
 	class Program
 	{
 		public static void Main(string[] args)
-		{
+		{	
+			
 			// neuen Spielkreis anlegen
 			Spielkreis testKreis =  Spielkreis.erzeugeTestKreis();
 			testKreis.printKreis();
@@ -36,10 +37,17 @@ namespace ZippZapp
 			// Wie lösen wir die nächste Aktion aus?
 			// Wer macht etwas? -> Auf welchem Objekt rufe ich eine Methode auf?
 			// Was wird gemacht? -> Welche Methode wird aufgerufen bzw. was tut diese Methode?
-			Spieler spielerMitBall = null;
-			spielerMitBall.tueEtwas();
-			testKreis.printKreis();
-			waitForKeypress();
+			
+			
+			//try {
+				Spieler spielerMitBall = null;
+				spielerMitBall.tueEtwas();
+				testKreis.printKreis();
+				waitForKeypress();
+			//} catch (Exception e){
+			//	System.Console.WriteLine(e.Message);
+			//}
+			
 			
 			
 			Console.WriteLine();
